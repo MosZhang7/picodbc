@@ -12,13 +12,11 @@ include(../cmake/tools.cmake)
 
 # ---- Create binary ----
 
-file(GLOB sources CONFIGURE_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
-add_executable(${PROJECT_NAME} ${sources})
+add_executable(${PROJECT_NAME} ./main.cpp)
 target_link_libraries(${PROJECT_NAME} picodbc)
-set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 20)
 
 
-# ---- Add GreeterTests ----
+# ---- Add Tests ----
 enable_testing()
 add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
 
